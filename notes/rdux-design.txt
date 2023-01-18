@@ -1,0 +1,39 @@
+Redux Store Design:
+ 1- Identify what state exists in the app.
+  i- name: string
+  ii- cost: number
+  iii- searchTerm: string
+  iv- cars: Array of {id, name, cost}
+
+ 2- Identify how that state changes over the time.
+    i- change name
+    ii- change cost
+    iii- change search term
+    iv- add car
+    v- remove car
+  * Create miny reducer function for each of above:
+    i- changeName
+    ii- changeCost
+    iii- changeSearchTerm
+    iv- addCar
+    v- removeCar
+
+ 3- Group together common pieces of state.
+  ** different engineers are gonig to come with different answers.
+
+  a: State related to adding cars:
+    i- name.
+    ii- cost.
+
+  b: State related to the list of car:
+    i- searchTerm.
+    ii- cars.
+
+ 4- Create slice for Each group.
+  Slice #1 adding cars:
+    changeName
+    changeCost
+  Slice #2 listing cars:
+    changeSearchTerm
+    addCar
+    removeCar
